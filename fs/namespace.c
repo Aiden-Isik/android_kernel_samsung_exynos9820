@@ -2204,7 +2204,7 @@ int ksys_umount(char __user *name, int flags)
 	if (user_request)
 		flush_delayed_fput_wait();
 
-.	retval = do_umount(mnt, flags);
+	retval = do_umount(mnt, flags);
 dput_and_out:
 	/* we mustn't call path_put() as that would clear mnt_expiry_mark */
 	dput(path.dentry);
